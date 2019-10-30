@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <button id="get_btn">GET</button>
+      <button id="post_btn">POST</button>
+      <button id="put_btn">PUT</button>
+    </div>
+    <pre id="res_display"></pre>
+    <script>
+      const getBtn = document.getElementById('get_btn');
+      const postBtn = document.getElementById('post_btn');
+      const putBtn = document.getElementById('put_btn');
+      
+      const request = (method) => {
+        const display = document.getElementById('res_display');
+        
+        fetch('http://localhost:8080/', {
+          method
+        }).then(x => x.text())
+          .then(x => display.innerHTML = x);
+      };
+      getBtn.addEventListener('click', () => request('GET'));
+      postBtn.addEventListener('click', () => request('POST'));
+      putBtn.addEventListener('click', () => request('PUT'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+version: "3"
+services:
+  app:
+    image: yt8492/cors-test:latest
+    container_name: "cors-test-app"
+    ports:
+      - "4000:8080"
