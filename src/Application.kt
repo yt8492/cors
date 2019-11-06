@@ -19,7 +19,7 @@ fun Application.module(testing: Boolean = false) {
     install(CallLogging)
 
     install(CORS) {
-        host("localhost:8080")
+        anyHost()
         allowSameOrigin = false
         method(HttpMethod.Put)
     }
